@@ -46,7 +46,7 @@ public class Main1 {
         return year;
     }
 
-void voice (){
+ public void voice (){
     System.out.println("Meeeooow!!!");
 }
 
