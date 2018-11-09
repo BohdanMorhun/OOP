@@ -5,31 +5,58 @@
 
 public class Main2 {
     public static void main(String[] args) {
-        Triangle triangle = new Triangle();
+        Triangle triangle = new Triangle(6,6,8);
 
-        triangle.setArea(4,5,4);
-        System.out.println(triangle.getArea());
+        triangle.setC(6);
+        triangle.setB(8.5);
+        triangle.setA(12);
+        System.out.println(triangle.Square());
 
       }
     }
-class Triangle{
+class Triangle {
 
- private double a;
- private double b;
- private double c;
+    private double a;
+    private double b;
+    private double c;
 
-
-public void setArea(double a,double b, double c){
+public Triangle(double a,double b,double c){
     this.a = a;
     this.b = b;
     this.c = c;
-
 }
 
-  public double getArea() {
+
+    public double getA() {
+        return a;
+    }
+
+    public void setA(double a) {
+        this.a = a;
+    }
+
+    public double getB() {
+        return b;
+    }
+
+    public void setB(double b) {
+        this.b = b;
+    }
+
+    public double getC() {
+        return c;
+    }
+
+    public void setC(double c) {
+        this.c = c;
+    }
+
+
+  public double Square() {
       double p = (a + b + c)/2;
       double s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
       return s;
 
   }
 }
+
