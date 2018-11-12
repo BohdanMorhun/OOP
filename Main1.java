@@ -50,14 +50,14 @@ public class Main1 {
     System.out.println("Meeeooow!!!");
 }
 
-void eat(String plate){
+ public void eat(String plate){
         if(plate.isEmpty()) {
             System.out.println("Cat is hungry!");
         } else {
             System.out.println("Cat is full!");
         }
     }
-void print(){
+ public void print(){
     System.out.println(name);
     System.out.println(year);
     System.out.println(breed);
