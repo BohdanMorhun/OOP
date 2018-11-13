@@ -1,53 +1,55 @@
 package com.company;
 
  public class Triangle extends Shape{
-    private double a;
-    private double b;
-    private double c;
+    private Point a;
+    private Point b;
+    private Point c;
 
-    public Triangle(double a, double b, double c, double x, double y) {
+    public Triangle(Point a, Point b, Point c) {
+        super();
         this.a = a;
         this.b = b;
         this.c = c;
     }
 
-     public double getA() {
-         return a;
+     public Point getA() {
+        return a;
      }
 
-     public void setA(double a) {
+     public void setA(Point a) {
          this.a = a;
      }
 
-     public double getB() {
+     public Point getB() {
          return b;
      }
 
-     public void setB(double b) {
-         this.b = b;
+     public void setB(Point b) {
+        this.b = b;
      }
 
-     public double getC() {
+     public Point getC() {
          return c;
      }
 
-     public void setC(double c) {
-         this.c = c;
+     public void setC(Point c) {
+        this.c = c;
+     }
+     public double calculatePerimetr() {
+         return Point.getLenght(a, b) + Point.getLenght(c, b) + Point.getLenght(a, c);
      }
 
-     public double calculatePerimetr(){
-        return a+b+c;
-    }
     public double calculateArea(){
-        double polP=(a+b+c)/2;
-        return Math.sqrt(polP*(polP-a)*(polP-b)*(polP-c));
+        double polP=calculatePerimetr()/2;
+        return Math.sqrt(polP*(polP - Point.getLenght(a,b)*(polP-Point.getLenght(c,b))*(polP-Point.getLenght(a,c))));
     }
-    @Override
-    public String toString() {
-        return "Triangle{" +
-                "a=" + a +
-                ", b=" + b +
-                ", c=" + c +
-                '}';
-    }
-}
+
+     @Override
+     public String toString() {
+         return "Triangle{" +
+                 "a=" + a +
+                 ", b=" + b +
+                 ", c=" + c +
+                 '}';
+     }
+ }
