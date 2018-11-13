@@ -1,59 +1,61 @@
 package com.company;
 
-  public class Rectangle extends Shape {
-      private double a;
-      private double b;
-      private double c;
-      private double d;
+   public class Rectangle extends Shape {
+      private Point a;
+      private Point b;
+      private Point c;
+      private Point d;
 
-      public Rectangle(double a, double b, double c, double d, double x, double y) {
+      public Rectangle(Point a, Point b, Point c,Point d) {
           super();
           this.a = a;
           this.b = b;
           this.c = c;
           this.d = d;
       }
+      public Rectangle(){
+      }
 
-      public double getA() {
+      public Point getA() {
           return a;
       }
 
-      public void setA(double a) {
+      public void setA(Point a) {
           this.a = a;
       }
 
-      public double getB() {
+      public Point getB() {
           return b;
       }
 
-      public void setB(double b) {
+      public void setB(Point b) {
           this.b = b;
       }
 
-      public double getC() {
+      public Point getC() {
           return c;
       }
 
-      public void setC(double c) {
+      public void setC(Point c) {
           this.c = c;
       }
 
-      public double getD() {
+      public Point getD() {
           return d;
       }
 
-      public void setD(double d) {
+      public void setD(Point d) {
           this.d = d;
       }
 
       @Override
       double calculateArea() {
-          double s = a * b;
+          double s = Point.getLenght(a,b) * Point.getLenght(b,c);
           return s;
       }
 
       public double calculatePerimetr(){
-          return (a + b) * 2;
+          return Point.getLenght(a,b) + (Point.getLenght(b,c) * 2);
       }
 
       @Override
